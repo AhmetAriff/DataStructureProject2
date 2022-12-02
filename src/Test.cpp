@@ -2,16 +2,23 @@
 #include<fstream>
 #include<string.h>
 #include<sstream>
+#include"Cell.hpp"
+#include"Queue.hpp"
+#include"Tissue.hpp"
+#include"Radix.hpp"
 using namespace std;
 
 int main(){
 
 ifstream in;
-    in.open("deneme.txt");
+    in.open("Veri.txt");
     while (!in.eof())
     {
+
+        Tissue* tissue = new Tissue(new Queue());
         string line;
         getline(in, line);
+        
         if (in.fail())
         {
             break;
@@ -23,14 +30,12 @@ ifstream in;
      
         while (bool(ss>>sonraki)==true)
         {
-                   s1->ekle(sonraki);  
+                   Cell* cell = new Cell(sonraki);
+                   tissue->data->enqueue(cell->dna);
         }
        
-       
-
-        cout << *s1;
         cout << line << endl;
-       
 
-    }
+   
+   }
 }

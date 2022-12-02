@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Node::Node(int data, Node* left , Node* right ) {
+Node::Node(Tissue* data, Node* left , Node* right ) {
 
 
 	this->data = data;

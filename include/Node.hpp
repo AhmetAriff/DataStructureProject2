@@ -3,16 +3,17 @@
 #define NODE_HPP
 
 #include<iostream>
+#include<Tissue.hpp>
 using namespace std;
 
 
 class Node {
 public:
-	int data;
+	Tissue *data;
 	Node *left;
 	Node *right;
 
-	Node( int data, Node *left = NULL , Node *right = NULL);
+	Node(Tissue* data, Node *left = NULL , Node *right = NULL);
 
 	
 };

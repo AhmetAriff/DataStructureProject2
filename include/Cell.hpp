@@ -5,15 +5,16 @@
 class Cell
 {
 private:
-    /* data */
+   
 public:
-    Cell(/* args */);
+    int dna;
+    Cell(int dna);
     ~Cell();
+
+    
 };
 
-Cell::Cell(/* args */)
-{
-}
+
 
 Cell::~Cell()
 {

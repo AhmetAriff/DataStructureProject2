@@ -1,19 +1,21 @@
 
 #ifndef TISSUE_HPP
 #define TISSUE_HPP
+#include"Queue.hpp"
 
 class Tissue
 {
 private:
     /* data */
 public:
-    Tissue(/* args */);
+    int midNumber;
+    Queue* data;
+    
+    Tissue(Queue* data);
     ~Tissue();
 };
 
-Tissue::Tissue(/* args */)
-{
-}
+
 
 Tissue::~Tissue()
 {
