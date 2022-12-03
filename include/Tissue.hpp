@@ -25,7 +25,7 @@ public:
 
 	void add(int dna);
 
-	int elementAt(int index);
+	int getDna(int index);
 
 	int count();
 

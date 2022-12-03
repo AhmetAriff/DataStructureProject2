@@ -45,7 +45,7 @@ void Tissue::add(int dna){
 
 }
 
-int Tissue::elementAt(int index){
+int Tissue::getDna(int index){
 
 	if(index == 0) return head->dna;
 	return findPreviousByPosition(index)->next->dna;

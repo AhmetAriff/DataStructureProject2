@@ -19,7 +19,7 @@ int Radix::StepCount(int number){
 Radix::Radix(Tissue* tissue){
 	this->length=tissue->count();
 	this->numbers = new int[length];
-	for(int i=0;i<length;i++){ this->numbers[i] = tissue->elementAt(i); }
+	for(int i=0;i<length;i++){ this->numbers[i] = tissue->getDna(i); }
 	queues = new Queue*[10];
 	for(int j=0;j<10;j++){ queues[j] = new Queue(); }
 	maxStep = MaxStepNumber();
