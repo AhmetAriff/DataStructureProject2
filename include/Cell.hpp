@@ -8,19 +8,11 @@ private:
    
 public:
     int dna;
-    Cell(int dna);
-    ~Cell();
+    Cell* next;
 
+    Cell(int dna,Cell*next=nullptr);
     
 };
-
-
-
-Cell::~Cell()
-{
-}
-
-
 
 
 

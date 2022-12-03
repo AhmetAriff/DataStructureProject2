@@ -4,8 +4,8 @@
 #include<sstream>
 #include"Cell.hpp"
 #include"Queue.hpp"
-#include"Tissue.hpp"
 #include"Radix.hpp"
+#include"Tissue.hpp"
 using namespace std;
 
 int main(){
@@ -15,7 +15,6 @@ ifstream in;
     while (!in.eof())
     {
 
-        Tissue* tissue = new Tissue(new Queue());
         string line;
         getline(in, line);
         
@@ -27,15 +26,16 @@ ifstream in;
         stringstream ss;
         ss << line;
         int sonraki;
+
+        Tissue* tissue = new Tissue();
      
         while (bool(ss>>sonraki)==true)
         {
-                   Cell* cell = new Cell(sonraki);
-                   tissue->data->enqueue(cell->dna);
+            tissue->add(sonraki);
+                  
         }
        
-        cout << line << endl;
-
    
    }
+   cout<<"hello wordl";
 }
