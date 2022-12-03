@@ -16,10 +16,10 @@ int Radix::StepCount(int number){
 	}
 	return basamak;
 }
-Radix::Radix(int *numbers, int length){
+Radix::Radix(Tissue* tissue){
+	this->length=tissue->count();
 	this->numbers = new int[length];
-	this->length = length;
-	for(int i=0;i<length;i++){ this->numbers[i] = numbers[i]; }
+	for(int i=0;i<length;i++){ this->numbers[i] = tissue->elementAt(i); }
 	queues = new Queue*[10];
 	for(int j=0;j<10;j++){ queues[j] = new Queue(); }
 	maxStep = MaxStepNumber();
@@ -31,7 +31,7 @@ int* Radix::QueueCurrentLengths(){
 	}
 	return lengths;
 }
-int* Radix::Sort(){
+int Radix::Sort(){
 	int numberIndex=0;
 	// read from array once and add to queues
 	for(;numberIndex<length;numberIndex++){
@@ -65,7 +65,7 @@ int* Radix::Sort(){
 		}
 	}
 		
-	return ordered;
+	return ordered[length/2];
 }
 Radix::~Radix(){	
 	delete [] numbers;

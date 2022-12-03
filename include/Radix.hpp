@@ -2,6 +2,7 @@
 #ifndef RADIX_HPP
 #define RADIX_HPP
 #include"Queue.hpp"
+#include"Tissue.hpp"
 #include <cmath>
 
 class Radix{
@@ -15,8 +16,8 @@ class Radix{
 		int StepCount(int);
 		int* QueueCurrentLengths();
 	public:
-		Radix(int*, int);
-		int* Sort();
+		Radix(Tissue*);
+		int Sort();
 		~Radix();
 };
 

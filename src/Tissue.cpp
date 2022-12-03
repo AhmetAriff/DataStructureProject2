@@ -8,11 +8,11 @@ Tissue::Tissue(){
 Cell* Tissue::findPreviousByPosition(int index){
     
 	Cell *prv = head;
-			int i=1;
-			for(Cell *itr = head; itr->next != NULL && i != index; itr=itr->next,i++){
-				prv = prv->next;
-			}
-			return prv;
+	int i=1;
+	for(Cell *itr = head; itr->next != NULL && i != index; itr=itr->next,i++){
+		prv = prv->next;
+	}
+	return prv;
 }		
 
 

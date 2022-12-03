@@ -8,7 +8,10 @@
 #include"Tissue.hpp"
 using namespace std;
 
+
+
 int main(){
+    
 
 ifstream in;
     in.open("Veri.txt");
@@ -34,8 +37,12 @@ ifstream in;
             tissue->add(sonraki);
                   
         }
+
+        Radix* radix = new Radix(tissue);
+        cout<<radix->Sort()<<endl;
+        delete radix;
        
    
    }
-   cout<<"hello wordl";
+   
 }
