@@ -10,7 +10,7 @@ Compile:
 	g++ -I ./include/ -o ./lib/Radix.o -c ./src/Radix.cpp
 	g++ -I ./include/ -o ./lib/System.o -c ./src/System.cpp
 	g++ -I ./include/ -o ./lib/Tissue.o -c ./src/Tissue.cpp
-	g++ -I ./include/ -o ./bin/Test -o ./lib/BinarySearchTree.o ./lib/Cell.o ./lib/Control.o ./lib/Organ.o ./lib/Organism.o ./lib/Queue.o ./lib/Radix.o ./lib/System.o ./lib/Tissue.o ./src/Test.cpp
+	g++ -I ./include/ -o ./bin/Test ./lib/BinarySearchTree.o ./lib/Cell.o ./lib/Control.o ./lib/Organ.o ./lib/Organism.o ./lib/Queue.o ./lib/Radix.o ./lib/System.o ./lib/Tissue.o ./src/Test.cpp
 
 Run:
 	./bin/Test

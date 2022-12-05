@@ -1,4 +1,5 @@
 #include"BinarySearchTree.hpp"
+
 void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 			if(subNode == NULL) subNode = new Node(tissue);
 			else if(tissue->midNumber <= subNode->data->midNumber)

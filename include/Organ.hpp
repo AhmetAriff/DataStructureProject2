@@ -6,19 +6,16 @@
 class Organ
 {
 private:
-    /* data */
+   
 public:
-    Organ(/* args */);
+    BST* bst;
+    Organ();
     ~Organ();
 };
 
-Organ::Organ(/* args */)
-{
-}
 
-Organ::~Organ()
-{
-}
+
+
 
 
 

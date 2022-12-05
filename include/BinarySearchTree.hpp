@@ -1,14 +1,24 @@
 
 #ifndef BINARY_SEARCH_TREE_HPP
 #define BINARY_SEARCH_TREE_HPP
-#include<Node.hpp>
 #include <iostream>
 #include <cmath>
 using namespace std;
-
+#include"Tissue.hpp"
 
 class BST{
 	private:	
+	struct Node{
+	Tissue* data;
+	Node *left;
+	Node *right;
+	
+	Node(Tissue*  dt,Node *lf=NULL,Node *rg=NULL){
+		data = dt;
+		left = lf;
+		right = rg;
+	}
+};
 		Node *root;
 		
 		void SearchAndAdd(Node *&subNode,Tissue* tissue);
@@ -21,6 +31,7 @@ class BST{
 		void PrintLevel(Node *subNode,int level);
 		bool Search(Node *subNode,Tissue* tissue);
 	public:
+	
 		BST();
 		bool isEmpty()const;
 		void Add(Tissue* tissue);
