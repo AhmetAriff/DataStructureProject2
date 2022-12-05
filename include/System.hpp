@@ -1,23 +1,41 @@
 
 #ifndef SYSTEM_HPP
 #define SYSTEM_HPP
+#include"Organ.hpp"
 
 class System
 {
 private:
-    /* data */
+    Organ **items;
+	int length;
+	int capacity;
 public:
-    System(/* args */);
-    ~System();
+    
+   
+    System();
+		
+	int size();
+	
+	bool isEmpty() ;
+		
+	Organ* elementAt(int i);
+		
+	void remove(Organ* organ);
+		
+	void removeAt(int index);
+		
+	void add(Organ* organ);
+	
+	void insert(int index,Organ* organ);
+		
+	void clear();
+		
+	~System();
+	
+
 };
 
-System::System(/* args */)
-{
-}
 
-System::~System()
-{
-}
 
 
 

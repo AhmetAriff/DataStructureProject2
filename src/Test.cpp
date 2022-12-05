@@ -4,7 +4,7 @@
 #include<sstream>
 #include"Radix.hpp"
 #include"Tissue.hpp"
-#include"Organ.hpp"
+#include"System.hpp"
 using namespace std;
 
 
@@ -12,7 +12,10 @@ using namespace std;
 int main(){
     
 int counter=0;
+
 Organ* organ = new Organ();
+System* system = new System();
+
 ifstream in;
     in.open("Veri.txt");
     while (!in.eof())
@@ -45,6 +48,8 @@ ifstream in;
            Organ* organ = new Organ();
         }
         organ->bst->Add(tissue);
+
+        system->add(organ);
         
         counter++;
    }
