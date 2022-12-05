@@ -1,17 +1,16 @@
 #include"BinarySearchTree.hpp"
-void BST:: SearchAndAdd(Node *&subNode,const int newItem){
-			if(subNode == NULL) subNode = new Node(newItem);
-			else if(newItem < subNode->data)
-				SearchAndAdd(subNode->left,newItem);
-			else if(newItem > subNode->data)
-				SearchAndAdd(subNode->right,newItem);
-			else return;
+void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
+			if(subNode == NULL) subNode = new Node(tissue);
+			else if(tissue->midNumber <= subNode->data->midNumber)
+				SearchAndAdd(subNode->left,tissue);
+			else if(tissue > subNode->data)
+				SearchAndAdd(subNode->right,tissue);
 		}
-		bool BST:: SearchAndDelete(Node *&subNode,int data){
+		bool BST:: SearchAndDelete(Node *&subNode,Tissue* tissue){
 			if(subNode == NULL) return false;
-			if(subNode->data == data) return DeleteNode(subNode);
-			else if(data < subNode->data) return SearchAndDelete(subNode->left,data);
-			else return SearchAndDelete(subNode->right,data);
+			if(subNode->data == tissue) return DeleteNode(subNode);
+			else if(tissue->midNumber < subNode->data->midNumber) return SearchAndDelete(subNode->left,tissue);
+			else return SearchAndDelete(subNode->right,tissue);
 		}
 		bool BST:: DeleteNode(Node *&subNode){
 			Node *DelNode = subNode;
@@ -35,13 +34,13 @@ void BST:: SearchAndAdd(Node *&subNode,const int newItem){
 		void BST:: inorder(Node *subNode){
 			if(subNode != NULL){
 				inorder(subNode->left);
-				cout<<subNode->data<<" ";
+				cout<<subNode->data->midNumber<<" ";
 				inorder(subNode->right);
 			}
 		}
 		void BST:: preorder(Node *subNode){
 			if(subNode != NULL){
-				cout<<subNode->data<<" ";
+				cout<<subNode->data->midNumber<<" ";
 				preorder(subNode->left);
 				preorder(subNode->right);
 			}
@@ -50,7 +49,7 @@ void BST:: SearchAndAdd(Node *&subNode,const int newItem){
 			if(subNode != NULL){
 				postorder(subNode->left);
 				postorder(subNode->right);
-				cout<<subNode->data<<" ";
+				cout<<subNode->data->midNumber<<" ";
 			}
 		}
 		
@@ -66,11 +65,11 @@ void BST:: SearchAndAdd(Node *&subNode,const int newItem){
 				PrintLevel(subNode->right,level-1);
 			}
 		}
-		bool BST:: Search(Node *subNode,int item){
+		bool BST:: Search(Node *subNode,Tissue* tissue){
 			if(subNode == NULL) return false;
-			if(subNode->data == item) return true;
-			if(item < subNode->data) return Search(subNode->left,item);
-			else return Search(subNode->right,item);
+			if(subNode->data->midNumber == tissue->midNumber) return true;
+			if(tissue->midNumber < subNode->data->midNumber) return Search(subNode->left,tissue);
+			else return Search(subNode->right,tissue);
 		}
 	
 		 BST::BST(){
@@ -79,11 +78,11 @@ void BST:: SearchAndAdd(Node *&subNode,const int newItem){
 		bool BST:: isEmpty()const{
 			return root == NULL;
 		}
-		void BST:: Add(int newItem){
-			SearchAndAdd(root,newItem);
+		void BST:: Add(Tissue* tissue){
+			SearchAndAdd(root,tissue);
 		}
-		void BST:: Delete(int data){
-			if(SearchAndDelete(root,data) == false) throw "Item not found.";
+		void BST:: Delete(Tissue* tissue){
+			if(SearchAndDelete(root,tissue) == false) throw "Item not found.";
 		}
 		void BST:: inorder(){
 			inorder(root);
@@ -103,8 +102,8 @@ void BST:: SearchAndAdd(Node *&subNode,const int newItem){
 		int BST:: Height(){
 			return Height(root);
 		}
-		bool BST:: Search(int item){
-			return Search(root,item);
+		bool BST:: Search(Tissue* tissue){
+			return Search(root,tissue);
 		}
 		void BST:: Clear(){
 			while(!isEmpty()) DeleteNode(root);

@@ -39,7 +39,7 @@ ifstream in;
         }
 
         Radix* radix = new Radix(tissue);
-        cout<<radix->Sort()<<endl;
+        tissue->midNumber=radix->Sort();
         delete radix;
        
    
