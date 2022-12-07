@@ -4,8 +4,9 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 			if(subNode == NULL) subNode = new Node(tissue);
 			else if(tissue->midNumber <= subNode->data->midNumber)
 				SearchAndAdd(subNode->left,tissue);
-			else if(tissue > subNode->data)
+			else if(tissue->midNumber > subNode->data->midNumber)
 				SearchAndAdd(subNode->right,tissue);
+			else return;
 		}
 		bool BST:: SearchAndDelete(Node *&subNode,Tissue* tissue){
 			if(subNode == NULL) return false;
@@ -76,10 +77,10 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 		 BST::BST(){
 			root = NULL;
 		}
-		bool BST:: isEmpty()const{
+		bool BST:: isEmpty(){
 			return root == NULL;
 		}
-		void BST:: Add(Tissue* tissue){
+		void BST::Add(Tissue* tissue){
 			SearchAndAdd(root,tissue);
 		}
 		void BST:: Delete(Tissue* tissue){

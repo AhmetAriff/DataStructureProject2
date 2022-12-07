@@ -6,9 +6,7 @@
 using namespace std;
 #include"Tissue.hpp"
 
-class BST{
-	private:	
-	struct Node{
+struct Node{
 	Tissue* data;
 	Node *left;
 	Node *right;
@@ -19,6 +17,10 @@ class BST{
 		right = rg;
 	}
 };
+
+class BST{
+	private:	
+	
 		Node *root;
 		
 		void SearchAndAdd(Node *&subNode,Tissue* tissue);
@@ -33,7 +35,7 @@ class BST{
 	public:
 	
 		BST();
-		bool isEmpty()const;
+		bool isEmpty();
 		void Add(Tissue* tissue);
 		void Delete(Tissue* tissue);
 		void inorder();

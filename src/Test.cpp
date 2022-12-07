@@ -4,7 +4,10 @@
 #include<sstream>
 #include"Radix.hpp"
 #include"Tissue.hpp"
-#include"System.hpp"
+#include"Sistem.hpp"
+#include"BinarySearchTree.hpp"
+
+
 using namespace std;
 
 
@@ -14,10 +17,9 @@ int main(){
 
 int counter =0;
 
-System* system = new System ();
-Organ* organ = new Organ();
+BST* bst = new BST();
 
-
+int i =0;
 
 ifstream in;
     in.open("Veri.txt");
@@ -25,6 +27,8 @@ ifstream in;
    
             while (!in.eof())
             {
+                
+
 
                 string line;
                 getline(in, line);
@@ -50,19 +54,31 @@ ifstream in;
                 tissue->midNumber=radix->Sort();
                 delete radix;
 
-                if(counter%20==0)
+                if((counter%20==0) &&  counter !=0 )
                 {
-                    system->add(organ);
-                    Organ* organ = new Organ();
-                }
-                organ->bst->Add(tissue);
+                    
+                    BST* bst = new BST();
+                    cout<<"###########################################################";
+                    cout<<endl;
+                } 
 
-            
-                counter++;
+                    bst->Add(tissue);
+                    
+                    
+
                 
+        
+                counter++;
+
+                cout<<bst->Height();
+                cout<<endl;
             }
+
+
+           
             
         }
+
     
      
    
