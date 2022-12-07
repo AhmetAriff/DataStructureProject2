@@ -59,9 +59,8 @@ ifstream in;
 
                 if((counter%20==0) &&  counter !=0 )
                 {
-                    
+                    sistem->add(organ);
                     organ = new Organ();
-                    cout<<"###########################################################";
                     cout<<endl;
                 } 
 
@@ -69,10 +68,15 @@ ifstream in;
                     
                 counter++;
 
-                cout<<organ->bst->Height();
-                cout<<endl;
+                if(counter%2000==0 &&  counter !=0 && counter !=52000){
+                    //organizmaya sistem ekleme kodu yazılacak
+                    sistem= new Sistem();
+                }
+
             }
 
+
+            sistem->elementAt(2)->bst->postorder();
         }
 
     
