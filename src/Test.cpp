@@ -4,7 +4,7 @@
 #include<sstream>
 #include"Radix.hpp"
 #include"Tissue.hpp"
-#include"Sistem.hpp"
+#include"Organism.hpp"
 
 
 
@@ -20,6 +20,7 @@ int counter =0;
 
 Organ* organ = new Organ();
 Sistem* sistem = new Sistem();
+Organism* organism= new Organism();
 
 
 
@@ -30,8 +31,7 @@ ifstream in;
    
             while (!in.eof())
             {
-                
-
+                counter++;
 
                 string line;
                 getline(in, line);
@@ -57,27 +57,25 @@ ifstream in;
                 tissue->midNumber=radix->Sort();
                 delete radix;
 
-                if((counter%20==0) &&  counter !=0 )
+                if((counter%20==0) )
                 {
                     sistem->add(organ);
                     organ = new Organ();
-                    cout<<endl;
+    
                 } 
 
                     organ->bst->Add(tissue);
-                    
-                counter++;
 
-                if(counter%2000==0 &&  counter !=0 && counter !=52000){
-                    //organizmaya sistem ekleme kodu yazılacak
+                if(counter%2000==0){
+                    organism->add(sistem);
                     sistem= new Sistem();
                 }
-
+                
             }
 
 
-            sistem->elementAt(2)->bst->postorder();
-        }
+            cout<<organism->elementAt(0)->size();
+}
 
     
      
