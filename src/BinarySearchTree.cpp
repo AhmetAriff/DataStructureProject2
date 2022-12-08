@@ -115,27 +115,21 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 
 			return root;
 		}
-		bool BST::isBalanced(Node* root){
+		int BST::isBalanced(Node* root){
 
-			int lh;
- 
-    	// for height of right subtree
-    	int rh;
- 
-		// If tree is empty then return true
 		if (root == NULL)
-			return 1;
+        return 0;
+		int lh = isBalanced(root->left);
+		if (lh == -1)
+			return -1;
+		int rh = isBalanced(root->right);
+		if (rh == -1)
+			return -1;
 	
-		// Get the height of left and right sub trees
-		lh = Height(root->left);
-		rh = Height(root->right);
-	
-		if (abs(lh - rh) <= 1 && isBalanced(root->left)
-			&& isBalanced(root->right))
-			return 1;
-	
-		// If we reach here then tree is not height-balanced
-		return 0;
+		if (abs(lh - rh) > 1)
+			return -1;
+		else
+        return max(lh, rh) + 1;
 		}
 
 		 BST::~BST(){
