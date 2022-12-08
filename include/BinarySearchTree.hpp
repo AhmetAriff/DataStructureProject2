@@ -45,7 +45,9 @@ class BST{
 		int Height();
 		bool Search(Tissue* tissue);
 		void Clear();
+		bool isBalanced(Node* root);
 		~BST();
+		Node* getRoot();
 };
 
 

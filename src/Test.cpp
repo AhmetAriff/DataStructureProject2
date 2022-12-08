@@ -74,7 +74,31 @@ ifstream in;
             }
 
 
-            cout<<organism->elementAt(0)->size();
+
+            for(int i =0;i<organism->size();i++){
+
+                for(int j=0;j<organism->elementAt(i)->size();i++){
+
+
+                    if(organism->elementAt(i)->elementAt(j)->bst->isBalanced(organism->elementAt(i)->elementAt(j)->bst->getRoot())){
+                        cout<<" ";
+                    }
+                    else{
+                        cout<<"#";
+                    }
+
+
+
+                }
+                cout<<endl;
+
+            
+            
+            }
+
+
+
+            
 }
 
     
