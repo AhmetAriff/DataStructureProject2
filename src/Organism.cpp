@@ -4,13 +4,13 @@
     {
         length = 0;
         capacity=100;
-        items = new Sistem*[capacity];
+        items = new System*[capacity];
     }
 		
     void Organism::reserve(int newCapacity)
     {
 
-        Sistem** tmp = new Sistem*[newCapacity];
+        System** tmp = new System*[newCapacity];
         for(int index =0;index<length;index++){
             items[index]=tmp[index];
         }
@@ -29,15 +29,15 @@
 	    return size() == 0;
 	}
 
-	Sistem* Organism::elementAt(int i)
+	System* Organism::elementAt(int i)
 	{
 		return items[i]; 
 	}
 
-	void Organism::remove( Sistem* sistem)
+	void Organism::remove( System* system)
 	{
 		for(int i=0;i<length;i++){
-			if(items[i] == sistem){
+			if(items[i] == system){
 				removeAt(i);
 				return;
 			}
@@ -51,16 +51,16 @@
 		length--;
 	}
 
-	void Organism::add( Sistem* sistem)
+	void Organism::add( System* system)
 	{			
-		insert(length,sistem);				
+		insert(length,system);				
 	}
 
-	void Organism:: insert(int i,Sistem* sistem) 
+	void Organism:: insert(int i,System* system) 
 	{
         if(length==capacity) reserve (2*capacity);
 	    for(int j=length-1;j>=i;j--) items[j + 1] = items[j];
-		items[i] = sistem;
+		items[i] = system;
 		length++;					
 	}
 		

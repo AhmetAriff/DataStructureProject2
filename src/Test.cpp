@@ -19,7 +19,7 @@ int main(){
 int counter =0;
 
 Organ* organ = new Organ();
-Sistem* sistem = new Sistem();
+System* system = new System();
 Organism* organism= new Organism();
 
 
@@ -59,7 +59,7 @@ ifstream in;
 
                 if((counter%20==0) )
                 {
-                    sistem->add(organ);
+                    system->add(organ);
                     organ = new Organ();
     
                 } 
@@ -67,8 +67,8 @@ ifstream in;
                     organ->bst->Add(tissue);
 
                 if(counter%2000==0){
-                    organism->add(sistem);
-                    sistem= new Sistem();
+                    organism->add(system);
+                    system= new System();
                 }
                 
             }

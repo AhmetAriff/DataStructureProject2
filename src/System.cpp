@@ -1,6 +1,6 @@
 #include"System.hpp"
 
-    System::System()
+System::System()
     {
         length = 0;
         capacity=100;

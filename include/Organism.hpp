@@ -1,12 +1,12 @@
 
 #ifndef ORGANISM_HPP
 #define ORGANISM_HPP
-#include"Sistem.hpp"
+#include"System.hpp"
 
 class Organism
 {
 private:
-    Sistem **items;
+    System **items;
 	int length;
 	int capacity;
     void reserve(int newCapacity);
@@ -19,15 +19,15 @@ public:
 	
 	bool isEmpty() ;
 		
-	Sistem* elementAt(int i);
+	System* elementAt(int i);
 		
-	void remove(Sistem* sistem);
+	void remove(System* sistem);
 		
 	void removeAt(int index);
 		
-	void add(Sistem* sistem);
+	void add(System* sistem);
 	
-	void insert(int index,Sistem* sistem);
+	void insert(int index,System* sistem);
 		
 	void clear();
 		

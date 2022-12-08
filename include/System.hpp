@@ -1,6 +1,5 @@
-
-#ifndef SYSTEM_HPP
-#define SYSTEM_HPP
+#ifndef SISTEM_HPP
+#define SISTEM_HPP
 #include"Organ.hpp"
 
 class System
