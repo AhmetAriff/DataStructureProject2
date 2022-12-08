@@ -77,10 +77,10 @@ ifstream in;
 
             for(int i =0;i<organism->size();i++){
 
-                for(int j=0;j<organism->elementAt(i)->size();i++){
+                for(int j=0;j<organism->elementAt(i)->size();j++){
 
 
-                    if(organism->elementAt(i)->elementAt(j)->bst->isBalanced(organism->elementAt(i)->elementAt(j)->bst->getRoot())){
+                    if((organism->elementAt(i)->elementAt(j)->bst->isBalanced(organism->elementAt(i)->elementAt(j)->bst->getRoot()))>0){
                         cout<<" ";
                     }
                     else{
