@@ -31,6 +31,10 @@ public:
 
 	void removeAt(int index);
 
+    void mutateTheTissue();
+
+    ~Tissue();
+
 
     
 };

@@ -31,6 +31,7 @@ class BST{
 		void postorder(Node *subNode);
 		int Height(Node *subNode);
 		void PrintLevel(Node *subNode,int level);
+		void mutateTheTree(Node* subNode);
 		bool Search(Node *subNode,Tissue* tissue);
 	public:
 	
@@ -43,11 +44,10 @@ class BST{
 		void postorder();
 		void levelorder();
 		int Height();
+		void mutateTheTree();
 		bool Search(Tissue* tissue);
 		void Clear();
-		int isBalanced(Node* root);
 		~BST();
-		Node* getRoot();
 };
 
 

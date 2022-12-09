@@ -12,7 +12,7 @@ Cell* Tissue::findPreviousByPosition(int index){
 	for(Cell *itr = head; itr->next != NULL && i != index; itr=itr->next,i++){
 		prv = prv->next;
 	}
-	return prv;
+	return prv; 
 }		
 
 
@@ -64,5 +64,18 @@ void Tissue::removeAt(int index){
 	del = prev->next;
 	prev->next = prev->next->next;
 	delete del;
+
+}
+
+void Tissue::mutateTheTissue(){
+
+	for(Cell* itr = head;itr!=NULL;itr=itr->next)
+		if(itr->dna%2==0){
+			itr->dna/=2;
+		}
+}
+
+Tissue::~Tissue(){
+
 
 }

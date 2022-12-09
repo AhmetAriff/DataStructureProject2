@@ -54,7 +54,18 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 				cout<<subNode->data->midNumber<<" ";
 			}
 		}
-		
+		void BST::mutateTheTree(Node*subNode){
+			if(root->data->midNumber%50==0)
+			{
+				if(subNode != NULL){
+				mutateTheTree(subNode->left);
+				mutateTheTree(subNode->right);
+				subNode->data->mutateTheTissue();
+			}
+			}
+			else{return;}
+			
+		}	
 		int BST:: Height(Node *subNode){
 			if(subNode == NULL) return -1;
 			return 1+max(Height(subNode->left),Height(subNode->right));
@@ -110,28 +121,9 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 		void BST:: Clear(){
 			while(!isEmpty()) DeleteNode(root);
 		}
-
-		Node* BST::getRoot(){
-
-			return root;
-		}
-		int BST::isBalanced(Node* root){
-
-		if (root == NULL)
-        return 0;
-		int lh = isBalanced(root->left);
-		if (lh == -1)
-			return -1;
-		int rh = isBalanced(root->right);
-		if (rh == -1)
-			return -1;
-	
-		if (abs(lh - rh) > 1)
-			return -1;
-		else
-        return max(lh, rh) + 1;
-		}
-
-		 BST::~BST(){
+		void BST::mutateTheTree(){
+			mutateTheTree(root);
+		}	
+		BST::~BST(){
 			Clear();
 		}

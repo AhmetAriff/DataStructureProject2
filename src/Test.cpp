@@ -22,7 +22,7 @@ Organ* organ = new Organ();
 System* system = new System();
 Organism* organism= new Organism();
 
-
+string character;
 
 
 ifstream in;
@@ -91,8 +91,31 @@ ifstream in;
                 cout<<endl;
 
             
-            
             }
+
+
+
+             cin>>character;
+            if(character=="a") 
+            {
+                for(int i =0;i<organism->size();i++){
+
+                    for(int j=0;j<organism->elementAt(i)->size();j++){
+
+                        organism->elementAt(i)->elementAt(j)->bst->mutateTheTree();
+
+                    }
+                }
+                
+            }
+            else{
+                cin>>character;
+            }
+
+
+
+
+            
 
 
 
