@@ -64,21 +64,13 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 			return tissues;
 		}
 
-
-
-		
 		void BST::mutateTheTree(Node*subNode){
 			if(root->data->midNumber%50==0)
 			{
-				if(subNode != NULL){
-				mutateTheTree(subNode->left);
-				mutateTheTree(subNode->right);
-				subNode->data->mutateTheTissue();
-				}
-
 				Tissue** tissues=postorderToArray(root);
 				for(int i =0;i<20;i++){
 					Radix* radix = new Radix(tissues[i]);
+					tissues[i]->mutateTheTissue();
 					tissues[i]->midNumber=radix->Sort();
 					delete radix;
 					i++;

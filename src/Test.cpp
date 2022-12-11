@@ -99,7 +99,7 @@ ifstream in;
                 for(int j=0;j<organism->elementAt(i)->size();j++){
 
 
-                    if((organism->elementAt(i)->elementAt(j)->bst->Height()==10)){//mutasyon gerçeleşiyo mutasyon 10 da oluyo agaaa
+                    if((organism->elementAt(i)->elementAt(j)->bst->Height()==10)||(organism->elementAt(i)->elementAt(j)->bst->Height()==19)||(organism->elementAt(i)->elementAt(j)->bst->Height()==18)){//mutasyon gerçeleşiyo mutasyon 10 da oluyo agaaa
                         cout<<"#";
                     }
                     else{
