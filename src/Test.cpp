@@ -73,14 +73,33 @@ ifstream in;
                 
             }
 
+            delete organ;
+            delete system;
+
             
+
+             
+
+            cout<<endl; 
 
             for(int i =0;i<organism->size();i++){
 
                 for(int j=0;j<organism->elementAt(i)->size();j++){
 
 
-                    if(organism->elementAt(i)->elementAt(j)->bst->Height()==19){
+                    organism->elementAt(i)->elementAt(j)->bst->mutateTheTree();
+                        
+                }
+
+            
+            } 
+
+             for(int i =0;i<organism->size();i++){
+
+                for(int j=0;j<organism->elementAt(i)->size();j++){
+
+
+                    if((organism->elementAt(i)->elementAt(j)->bst->Height()==10)){//mutasyon gerçeleşiyo mutasyon 10 da oluyo agaaa
                         cout<<"#";
                     }
                     else{
@@ -91,36 +110,29 @@ ifstream in;
                 cout<<endl;
 
             
-            }
+            } 
 
-
-
-             cin>>character;
-            if(character=="a") 
-            {
-                for(int i =0;i<organism->size();i++){
-
-                    for(int j=0;j<organism->elementAt(i)->size();j++){
-
-                        organism->elementAt(i)->elementAt(j)->bst->mutateTheTree();
-
-                    }
-                }
-                
-            }
-            else{
-                cin>>character;
-            }
-
+           
 
 
 
             
 
 
-
             
+           
+
+
+
+
+
+
 }
+            
+
+
+            
+
 
     
      

@@ -24,6 +24,7 @@ Radix::Radix(Tissue* tissue){
 	for(int j=0;j<10;j++){ queues[j] = new Queue(); }
 	maxStep = MaxStepNumber();
 }
+
 int* Radix::QueueCurrentLengths(){
 	int *lengths = new int[10];
 	for(int i=0;i<10;i++){
