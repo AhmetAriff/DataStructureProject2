@@ -71,7 +71,7 @@ void Tissue::mutateTheTissue(){
 
 	for(Cell* itr = head;itr!=NULL;itr=itr->next)
 		if(itr->dna%2==0){
-			itr->dna/=2;
+			itr->dna=itr->dna/2;
 		}
 }
 

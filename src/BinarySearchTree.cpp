@@ -64,13 +64,13 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 			return tissues;
 		}
 
-		void BST::mutateTheTree(Node*subNode){
+		void BST::mutateTheTree(Node*root){
 			if(root->data->midNumber%50==0)
 			{
 				Tissue** tissues=postorderToArray(root);
 				for(int i =0;i<20;i++){
-					Radix* radix = new Radix(tissues[i]);
 					tissues[i]->mutateTheTissue();
+					Radix* radix = new Radix(tissues[i]);
 					tissues[i]->midNumber=radix->Sort();
 					delete radix;
 					i++;
@@ -130,32 +130,17 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 			}
 		}
 
-		bool BST::isBalanced(Node* subNode)
+		bool BST::isBalanced()
 		{
-		int lh;
- 
-    // for height of right subtree
-    int rh;
- 
-    // If tree is empty then return true
-    if (subNode == NULL)
-        return 1;
- 
-    // Get the height of left and right sub trees
-    lh = Height(subNode->left);
-    rh = Height(subNode->right);
- 
-    if (abs(lh - rh) <= 1 && isBalanced(subNode->left)
-        && isBalanced(subNode->right))
-        return 1;
- 
-    
-    return 0;
+			if(Height()>9){
+				return true;
+			}
+			else{
+				return false;
+			}
 		}
 
-		bool BST::isBalanced(){
-			return isBalanced(root);
-		}
+		
 		
 		int BST:: Height(){
 			return Height(root);

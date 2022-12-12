@@ -26,7 +26,7 @@ string character;
 
 
 ifstream in;
-    in.open("Veri.txt");
+    in.open("Data.txt");
 
    
             while (!in.eof())
@@ -82,24 +82,22 @@ ifstream in;
 
             cout<<endl; 
 
-            for(int i =0;i<organism->size();i++){
+             for(int i =0;i<organism->size();i++){
 
-                for(int j=0;j<organism->elementAt(i)->size();j++){
+                for(int j=0;j<100;j++){
 
 
                     organism->elementAt(i)->elementAt(j)->bst->mutateTheTree();
-                        
                 }
 
-            
-            } 
+            }  
 
              for(int i =0;i<organism->size();i++){
 
-                for(int j=0;j<organism->elementAt(i)->size();j++){
+                for(int j=0;j<100;j++){
 
 
-                    if((organism->elementAt(i)->elementAt(j)->bst->Height()==10)||(organism->elementAt(i)->elementAt(j)->bst->Height()==19)||(organism->elementAt(i)->elementAt(j)->bst->Height()==18)){//mutasyon gerçeleşiyo mutasyon 10 da oluyo agaaa
+                    if(organism->elementAt(i)->elementAt(j)->bst->isBalanced()){
                         cout<<"#";
                     }
                     else{
@@ -111,6 +109,16 @@ ifstream in;
 
             
             } 
+
+
+
+
+            if(organism->elementAt(0)->elementAt(0)->bst->isBalanced()){
+                cout<<"dengeli";
+            }
+            else{cout<<"dengesiz";}
+
+            
 
            
 

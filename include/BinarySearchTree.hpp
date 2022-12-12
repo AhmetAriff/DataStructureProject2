@@ -33,7 +33,6 @@ class BST{
 		void PrintLevel(Node *subNode,int level);
 		void mutateTheTree(Node* subNode);
 		bool Search(Node *subNode,Tissue* tissue);
-		bool isBalanced(Node * subNode);
 	public:
 	
 		BST();
