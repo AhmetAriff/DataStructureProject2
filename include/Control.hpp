@@ -13,10 +13,12 @@ class Control
 {
 private:
 
+    string data;
     Organism* organism;
     void refreshConole();
    
 public:
+    Control(string data);
     void readAndAdd();
     void printOrganism();
     void printMutatedOrganism();

@@ -1,11 +1,11 @@
 #include"Control.hpp"
-#include"conio.h"
+#include"conio.h"//getch()
 
 int main(){
 
     int input;
     
-    Control * control = new Control();
+    Control * control = new Control("Data.txt");
     control->printOrganism();
     
     do{

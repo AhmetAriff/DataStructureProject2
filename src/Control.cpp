@@ -6,6 +6,9 @@ void Control::refreshConole(){
     system("CLS");
 }
 
+Control::Control(string data){
+    this->data=data;
+}
 void Control::printOrganism(){
 
     refreshConole();
@@ -69,11 +72,9 @@ Organ* organ = new Organ();
 System* system = new System();
 Organism* organism= new Organism();
 
-string character;
-
 
 ifstream in;
-    in.open("Data.txt");
+    in.open(data);
 
    
         while (!in.eof())
