@@ -80,9 +80,9 @@ ifstream in;
 
              
 
-            cout<<endl; 
+             cout<<endl; 
 
-             for(int i =0;i<organism->size();i++){
+              for(int i =0;i<organism->size();i++){
 
                 for(int j=0;j<100;j++){
 
@@ -90,7 +90,7 @@ ifstream in;
                     organism->elementAt(i)->elementAt(j)->bst->mutateTheTree();
                 }
 
-            }  
+            }    
 
              for(int i =0;i<organism->size();i++){
 
@@ -113,10 +113,7 @@ ifstream in;
 
 
 
-            if(organism->elementAt(0)->elementAt(0)->bst->isBalanced()){
-                cout<<"dengeli";
-            }
-            else{cout<<"dengesiz";}
+           
 
             
 

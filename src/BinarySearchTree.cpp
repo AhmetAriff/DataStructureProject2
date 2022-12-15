@@ -132,7 +132,7 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 
 		bool BST::isBalanced()
 		{
-			if(Height()>9){
+			if(Height()>5){
 				return true;
 			}
 			else{
