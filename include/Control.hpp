@@ -1,24 +1,28 @@
 
 #ifndef CONTROL_HPP
 #define CONTROL_HPP
+#include<iostream>
+#include<fstream>
+#include<string.h>
+#include<sstream>
+#include"Radix.hpp"
+#include"Tissue.hpp"
+#include"Organism.hpp"
 
 class Control
 {
 private:
-    /* data */
+
+    Organism* organism;
+    void refreshConole();
+   
 public:
-    Control(/* args */);
+    void readAndAdd();
+    void printOrganism();
+    void printMutatedOrganism();
     ~Control();
+
 };
-
-Control::Control(/* args */)
-{
-}
-
-Control::~Control()
-{
-}
-
 
 
 

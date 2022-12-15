@@ -33,6 +33,10 @@ public:
 
     void mutateTheTissue();
 
+    void clear();
+
+    bool isEmpty();
+
     ~Tissue();
 
 

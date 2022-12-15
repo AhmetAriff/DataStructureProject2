@@ -7,4 +7,5 @@ Organ::Organ()
 
 Organ::~Organ()
 {
+    this->bst->~BST();
 }

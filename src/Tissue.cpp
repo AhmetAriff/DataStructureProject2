@@ -75,7 +75,16 @@ void Tissue::mutateTheTissue(){
 		}
 }
 
+bool Tissue::isEmpty(){
+	return head->next == NULL;
+}
+
+void Tissue::clear(){
+	while(!isEmpty()){
+		removeAt(0);
+	}
+		
+}
 Tissue::~Tissue(){
-
-
+	clear();
 }
