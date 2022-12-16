@@ -21,11 +21,11 @@ void Control::printOrganism(){
          for(int j=0;j<100;j++){
 
 
-            if(organism->elementAt(i)->elementAt(j)->bst->isBalanced()){
-                cout<<"#";
+            if(organism->elementAt(i)->elementAt(j)->bst->isBalanced()>0){
+                cout<<" ";
             }
             else{
-                cout<<" ";
+                cout<<"#";
             }
 
             }
@@ -49,11 +49,11 @@ void Control::printMutatedOrganism(){
 
              organism->elementAt(i)->elementAt(j)->bst->mutateTheTree();
 
-             if(organism->elementAt(i)->elementAt(j)->bst->isBalanced()){
-                cout<<"#";
+             if(organism->elementAt(i)->elementAt(j)->bst->isBalanced()>0){
+                cout<<" ";
             }
             else{
-                cout<<" ";
+                cout<<"#";
             }
 
             }
@@ -105,14 +105,14 @@ ifstream in;
             tissue->midNumber=radix->Sort();
             delete radix;
 
+            organ->bst->Add(tissue);
+
             if((counter%20==0) )
             {
                 system->add(organ);
                 organ = new Organ();
     
             } 
-
-                organ->bst->Add(tissue);
 
             if(counter%2000==0){
                 organism->add(system);
