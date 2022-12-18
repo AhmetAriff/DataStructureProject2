@@ -156,12 +156,15 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 			
 		}
 
-		int BST::isBalanced()
+		bool BST::isBalanced()
 		{
-			return isBalanced(root);
+			if(isBalanced(root)>0){
+				return true;
+			}
+			else{
+				return false;
+			}
 		}
-
-		
 		
 		int BST:: Height(){
 			return Height(root);
@@ -175,12 +178,6 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 		void BST::mutateTheTree(){
 			mutateTheTree(root);
 		}	
-		int BST::leftHeight(){
-			return Height(root->left);
-		}
-		int BST::rightHeight(){
-			return Height(root->right);
-		}
 		BST::~BST(){
 			Clear();
 		}

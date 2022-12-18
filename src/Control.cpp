@@ -21,7 +21,7 @@ void Control::printOrganism(){
          for(int j=0;j<100;j++){
 
 
-            if(organism->elementAt(i)->elementAt(j)->bst->isBalanced()>0){
+            if(organism->elementAt(i)->elementAt(j)->bst->isBalanced()){
                 cout<<" ";
             }
             else{
@@ -47,9 +47,9 @@ void Control::printMutatedOrganism(){
         for(int j=0;j<100;j++){
 
 
-             organism->elementAt(i)->elementAt(j)->bst->mutateTheTree();
+            organism->elementAt(i)->elementAt(j)->bst->mutateTheTree();
 
-             if(organism->elementAt(i)->elementAt(j)->bst->isBalanced()>0){
+             if(organism->elementAt(i)->elementAt(j)->bst->isBalanced()){
                 cout<<" ";
             }
             else{
@@ -87,17 +87,17 @@ ifstream in;
             if (in.fail())
             {
                 break;
-             }
+            }
                 
             stringstream ss;
             ss << line;
-            int sonraki;
+            int next;
 
             Tissue* tissue = new Tissue();
             
-            while (bool(ss>>sonraki)==true)
+            while (bool(ss>>next)==true)
             {
-                tissue->add(sonraki);
+                tissue->add(next);
                         
             }
 
@@ -107,7 +107,7 @@ ifstream in;
 
             organ->bst->Add(tissue);
 
-            if((counter%20==0) )
+            if(counter%20==0)
             {
                 system->add(organ);
                 organ = new Organ();

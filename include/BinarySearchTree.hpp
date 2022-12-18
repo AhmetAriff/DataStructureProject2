@@ -38,7 +38,7 @@ class BST{
 	
 		BST();
 		bool isEmpty();
-		int isBalanced();
+		bool isBalanced();
 		void Add(Tissue* tissue);
 		void Delete(Tissue* tissue);
 		void inorder();
@@ -50,8 +50,6 @@ class BST{
 		void mutateTheTree();
 		bool Search(Tissue* tissue);
 		void Clear();
-		int rightHeight();
-		int leftHeight();
 		~BST();
 };
 
