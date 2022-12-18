@@ -6,11 +6,14 @@
 class Organ
 {
 private:
-   
-public:
     BST* bst;
+public:
+    
     Organ();
     ~Organ();
+    void mutateTheOrgan();
+    bool isBalanced();
+    void add(Tissue* tissue);
 };
 
 
