@@ -14,7 +14,7 @@ void Control::printOrganism(){
     refreshConole();
     readAndAdd();
 
-    cout<<"                   (ORGANISM)"<<endl<<endl;
+    cout<<"                   (ORGANISM)"<<endl;
 
     for(int i =0;i<organism->size();i++){
 
@@ -40,7 +40,7 @@ void Control::printMutatedOrganism(){
 
     refreshConole();
 
-    cout<<"                 (MUTATED ORGANISM)"<<endl<<endl;
+    cout<<"                 (MUTATED ORGANISM)"<<endl;
 
     for(int i =0;i<organism->size();i++){
 
@@ -49,7 +49,7 @@ void Control::printMutatedOrganism(){
 
             organism->elementAt(i)->elementAt(j)->mutateTheOrgan();
 
-             if(organism->elementAt(i)->elementAt(j)->isBalanced()){
+            if(organism->elementAt(i)->elementAt(j)->isBalanced()){
                 cout<<" ";
             }
             else{
@@ -98,7 +98,6 @@ ifstream in;
             while (bool(ss>>next)==true)
             {
                 tissue->add(next);
-                        
             }
 
             Radix* radix = new Radix(tissue);
@@ -111,7 +110,6 @@ ifstream in;
             {
                 system->add(organ);
                 organ = new Organ();
-    
             } 
 
             if(counter%2000==0){

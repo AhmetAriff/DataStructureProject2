@@ -5,7 +5,7 @@ int main(){
 
     int input;
     
-    Control * control = new Control("Veri.txt");
+    Control * control = new Control("Data.txt");
     control->printOrganism();
     
     do{
