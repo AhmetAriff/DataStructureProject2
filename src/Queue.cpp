@@ -37,7 +37,6 @@ bool Queue:: isEmpty() const {
 }	
 
 const int Queue:: peek(){
-	if(isEmpty()) throw "Empty List";
 	return items[front];
 }
 
@@ -48,8 +47,7 @@ void Queue:: enqueue(const int item){
 	length++;
 }
 
-void Queue:: dequeue(){
-	if(isEmpty()) throw "Empty List";			
+void Queue:: dequeue(){			
 	front = (front + 1) % capacity;
 	length--;
 }

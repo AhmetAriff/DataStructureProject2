@@ -33,20 +33,6 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 			delete DelNode;
 			return true;
 		}
-		void BST:: inorder(Node *subNode){
-			if(subNode != NULL){
-				inorder(subNode->left);
-				cout<<subNode->data->midNumber<<" ";
-				inorder(subNode->right);
-			}
-		}
-		void BST:: preorder(Node *subNode){
-			if(subNode != NULL){
-				cout<<subNode->data->midNumber<<" ";
-				preorder(subNode->left);
-				preorder(subNode->right);
-			}
-		}
 		int BST::postorder(Node *root,Tissue** tissues,int index){
 		if (root == NULL)
         return index;
@@ -85,25 +71,6 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 			else{return;}
 			
 		}	
-		int BST:: Height(Node *subNode){
-			if(subNode == NULL) return -1;
-			return 1+max(Height(subNode->left),Height(subNode->right));
-		}
-		void BST:: PrintLevel(Node *subNode,int level){
-			if(subNode == NULL) return;
-			if(level == 0) cout<<subNode->data<<" ";
-			else{
-				PrintLevel(subNode->left,level-1);
-				PrintLevel(subNode->right,level-1);
-			}
-		}
-		bool BST:: Search(Node *subNode,Tissue* tissue){
-			if(subNode == NULL) return false;
-			if(subNode->data->midNumber == tissue->midNumber) return true;
-			if(tissue->midNumber < subNode->data->midNumber) return Search(subNode->left,tissue);
-			else return Search(subNode->right,tissue);
-		}
-	
 		BST::BST(){
 			root = NULL;
 		}
@@ -115,19 +82,6 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 		}
 		void BST:: Delete(Tissue* tissue){
 			if(SearchAndDelete(root,tissue) == false) throw "Item not found.";
-		}
-		void BST:: inorder(){
-			inorder(root);
-		}
-		void BST:: preorder(){
-			preorder(root);
-		}
-		
-		void BST:: levelorder(){
-			int h = Height();
-			for(int level=0;level<=h;level++){
-				PrintLevel(root,level);
-			}
 		}
 
 		int BST:: isBalanced(Node*root){
@@ -156,7 +110,6 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 			}
 			
 		}
-
 		bool BST::isBalanced()
 		{
 			if(isBalanced(root)>0){
@@ -165,13 +118,6 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 			else{
 				return false;
 			}
-		}
-		
-		int BST:: Height(){
-			return Height(root);
-		}
-		bool BST:: Search(Tissue* tissue){
-			return Search(root,tissue);
 		}
 		void BST:: Clear(){
 			while(!isEmpty()) DeleteNode(root);

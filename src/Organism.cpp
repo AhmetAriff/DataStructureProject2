@@ -3,7 +3,7 @@
     Organism::Organism()
     {
         length = 0;
-        capacity=100;
+        capacity=30;
         items = new System*[capacity];
     }
 		
@@ -12,7 +12,7 @@
 
         System** tmp = new System*[newCapacity];
         for(int index =0;index<length;index++){
-            items[index]=tmp[index];
+            tmp[index]=items[index];
         }
         delete[] items;
         items=tmp;

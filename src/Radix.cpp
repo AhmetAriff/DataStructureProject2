@@ -41,16 +41,13 @@ int Radix::power(int e){
 
 int Radix::Sort(){
 	int numberIndex=0;
-	// read from array once and add to queues
 	for(;numberIndex<length;numberIndex++){
 		int stepValue = numbers[numberIndex]%10;
 		int num = numbers[numberIndex];
 		queues[stepValue]->enqueue(num);
 	}
 		
-	//i starting from 1 because of first digit processed
 	for(int i=1;i<maxStep;i++){
-		//get the current length in all queues
 		int *qlengths = QueueCurrentLengths();
 		for(int index=0;index<10;index++){
 			int len=qlengths[index];
