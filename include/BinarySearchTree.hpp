@@ -25,6 +25,7 @@ class BST{
 		void SearchAndAdd(Node *&subNode,Tissue* tissue);
 		bool SearchAndDelete(Node *&subNode,Tissue* tissue);
 		bool DeleteNode(Node *&subNode);
+		bool DeleteNodeForMutation(Node *&subNode);
 		void mutateTheTree(Node* subNode);
 		int isBalanced(Node*root);
 	public:
@@ -38,7 +39,9 @@ class BST{
 		Tissue** postorderToArray(Node*root);
 		void mutateTheTree();
 		void Clear();
+		void ClearForMutation();
 		~BST();
+		
 };
 
 

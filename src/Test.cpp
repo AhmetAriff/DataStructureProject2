@@ -1,3 +1,4 @@
+
 #include"Control.hpp"
 #include"conio.h"//getch()
 
@@ -5,7 +6,7 @@ int main(){
 
     int input;
     
-    Control * control = new Control("Veri.txt");
+    Control * control = new Control("GulenYuz.txt");
     control->printOrganism();
     
     do{

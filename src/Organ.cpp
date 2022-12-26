@@ -1,3 +1,4 @@
+
 #include"Organ.hpp"
 
 Organ::Organ(){
@@ -5,7 +6,7 @@ Organ::Organ(){
 }
 
 Organ::~Organ(){
-    this->bst->~BST();
+    delete this->bst;
 }
 
 void Organ::mutateTheOrgan(){

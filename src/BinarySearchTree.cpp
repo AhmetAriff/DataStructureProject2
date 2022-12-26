@@ -1,3 +1,4 @@
+
 #include"BinarySearchTree.hpp"
 
 void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
@@ -30,7 +31,9 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 				if(parent == subNode) subNode->left = DelNode->left;
 				else parent->right = DelNode->left;
 			}
+			delete DelNode->data;//tissue iadesi
 			delete DelNode;
+			
 			return true;
 		}
 		int BST::postorder(Node *root,Tissue** tissues,int index){
@@ -59,10 +62,9 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 					Radix* radix = new Radix(tissues[i]);
 					tissues[i]->midNumber=radix->Sort();
 					delete radix;
-					i++;
 				}
+					ClearForMutation();
 
-				Clear();
 				for(int j =0 ;j<20;j++ ){
 					Add(tissues[j]);
 				}
@@ -91,7 +93,6 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 			}
 			
 			int lh = isBalanced(root->left);
-
 			if (lh == -1){
 				return -1;
 			}
@@ -110,6 +111,26 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 			}
 			
 		}
+		bool BST:: DeleteNodeForMutation(Node *&subNode){
+			Node *DelNode = subNode;
+			
+			if(subNode->right == NULL) subNode = subNode->left;
+			else if(subNode->left == NULL) subNode = subNode->right;
+			else{
+				DelNode = subNode->left;
+				Node *parent = subNode;
+				while(DelNode->right != NULL){
+					parent = DelNode;
+					DelNode = DelNode->right;
+				}
+				subNode->data = DelNode->data;
+				if(parent == subNode) subNode->left = DelNode->left;
+				else parent->right = DelNode->left;
+			}
+			delete DelNode;
+			
+			return true;
+		}
 		bool BST::isBalanced()
 		{
 			if(isBalanced(root)>0){
@@ -120,7 +141,10 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 			}
 		}
 		void BST:: Clear(){
-			while(!isEmpty()) DeleteNode(root);
+			while(!isEmpty()) DeleteNode(root);// tissue adresleriyle beraber iade ediyorum
+		}
+		void BST::ClearForMutation(){// tissue adreslerini kullanacagim icin iade etmiyorum sadece agaci temizliyorum
+			while(!isEmpty()) DeleteNodeForMutation(root);
 		}
 		void BST::mutateTheTree(){
 			mutateTheTree(root);
@@ -128,3 +152,5 @@ void BST:: SearchAndAdd(Node *&subNode,Tissue* tissue){
 		BST::~BST(){
 			Clear();
 		}
+
+		

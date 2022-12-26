@@ -1,3 +1,5 @@
+
+
 #include"Cell.hpp"
 
 Cell::Cell(int dna,Cell*next){

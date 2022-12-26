@@ -1,3 +1,4 @@
+
 #include"Organism.hpp"
 
     Organism::Organism()
@@ -72,4 +73,5 @@
 	Organism::~Organism()
     {
         if(items != NULL) delete [] items;
+		
     }
